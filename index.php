@@ -40,25 +40,21 @@
                           <!-- <a href="#"><i class="icon ion-social-snapchat"></i></a> -->
                           <a target="_blank" href="https://www.instagram.com/denishotiii/"><i class="icon ion-social-instagram"></i></a></div>
                     </div>
-                    <p class="copyright" id="copyright"><!-- Here the Copyright Text will be displayed --></p>
+                    <?php
+                        $started_year = 2021;
+                        $year_now = date('Y');
+                    if($started_year == $year_now){
+                    ?>
+                    <p class="copyright" id="copyright"><?php echo "Your Comp. © ".$started_year ?></p>
+                    <?php 
+                    }else{
+                    ?>
+                    <p class="copyright" id="copyright"><?php echo "Your Comp. © ".$started_year."-".$year_now ?></p>
+                    <?php
+                    }
+                    ?>
                 </div>
             </footer>
           </div>
-          <script>
-            var year_started = 2021;  // The year the company/web started
-            var dt = new Date();      // Using JavaScript Date Function we get the TODAY'S DATE
-            var year_now = dt.getFullYear();  // We get the JUST the year from our full date
-            //    year = 2022;
-            if(year_now == year_started){    // With If Conditionals we look if the year we started company is the same as today's year
-                var copyr = "Your Comp. © " + year_started;   // IF YES we return this STRING, with just the copyright and the year we started
-            }
-            else{      // We can use ELSE for the OTHER OPTIONS; 
-                var copyr = "Your Comp. © " + year_started + "-" + year_now;  //  If the year is not the same as the started year we return this string
-            }
-
-
-            document.getElementById("copyright").innerHTML = copyr; // Using "document.getElementById("copyright").innerHTML" we sent this string to the paragraph element with ID="copyright" in HTML
-
-          </script>
     </body>
 </html>
