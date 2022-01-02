@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+        
+        <title>Auto Update Copyright Year in a Website Dynamically (2022)</title>
+    </head>
+    <body>
+        <div class="footer-dark">
+            <footer>
+                <div class="fcontainer">
+                    <div class="row">
+                        <div class="column left">
+                            <h3>Categories</h3>
+                            <ul>
+                                <li><a href="#">Categorie 1</a></li>
+                                <li><a href="#">Categorie 2</a></li>
+                                <li><a href="#">Categorie 3</a></li>
+                            </ul>
+                        </div>
+                        <div class="column middle">
+                            <h3>Information</h3>
+                            <ul>
+                                <li><a href="#">Info 1</a></li>
+                                <li><a href="#">Info 2</a></li>
+                                <li><a href="#">Info 3</a></li>
+                            </ul>
+                        </div>
+                        <div class="column right">
+                            <h3>Company Name</h3>
+                            <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                        </div>
+                        <div class="col item social">
+                          <!-- <a target="_blank" href="https://www.facebook.com/"><i class="icon ion-social-facebook"></i></a> -->
+                          <!-- <a href="#"><i class="icon ion-social-twitter"></i></a> -->
+                          <!-- <a href="#"><i class="icon ion-social-snapchat"></i></a> -->
+                          <a target="_blank" href="https://www.instagram.com/denishotiii/"><i class="icon ion-social-instagram"></i></a></div>
+                    </div>
+                    <p class="copyright" id="copyright"></p>
+                </div>
+            </footer>
+          </div>
+          <script>
+            var year_started = 2021;  // The year the company/web started
+            var dt = new Date();      // Using JavaScript Date Function we get the TODAY'S DATE
+            var year_now = dt.getFullYear();  // We get the JUST the year from our full date
+            //    year = 2022;
+            if(year_now == year_started){    // With If Conditionals we look if the year we started company is the same as today's year
+                var copyr = "Your Comp. © " + year_started;   // IF YES we return this STRING, with just the copyright and the year we started
+            }
+            else{      // We can use ELSE for the OTHER OPTIONS; 
+                var copyr = "Your Comp. © " + year_started + "-" + year_now;  //  If the year is not the same as the started year we return this string
+            }
+
+
+            document.getElementById("copyright").innerHTML = copyr; // Using "document.getElementById("copyright").innerHTML" we sent this string to the paragraph element with ID="copyright" in HTML
+
+          </script>
+    </body>
+</html>
